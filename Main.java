@@ -21,8 +21,6 @@ public class Main
         ArrayList <Caminhao> arrayCaminhao = new ArrayList<>();
         Mundo m = new Mundo();
 
-        m.setMapaAtual();
-
         for (int i = 0; i < 10; i++)
         {
             arrayMoto.add(new Moto());
@@ -33,8 +31,8 @@ public class Main
 
         while (!arrayCaminhao.isEmpty() && !arrayMoto.isEmpty() && !arrayCarro.isEmpty())
         {
-            m.setMapaAtual();
-            m.imprimeMapa();
+            m.setMapaAtualParaPadrao();
+//            m.imprimeMapa();
 
             for (int i = 0; i < arrayMoto.size(); i ++)
             {
