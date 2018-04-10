@@ -1,6 +1,6 @@
 public class Carro extends Veiculo {
-    public Carro(int x, int y)
+    public Carro()
     {
-        super("vermelho", 2, x, y);
+        super(4, 2);
     }
 }
