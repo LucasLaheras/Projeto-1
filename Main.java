@@ -3,6 +3,7 @@ import java.util.Scanner;
 import java.util.Random;
 
 
+
 public class Main
 {
     public static void main(String[] args)
@@ -29,33 +30,58 @@ public class Main
         }
 
 
-        while (!arrayCaminhao.isEmpty() && !arrayMoto.isEmpty() && !arrayCarro.isEmpty())
+        while (!arrayCaminhao.isEmpty() || !arrayMoto.isEmpty() || !arrayCarro.isEmpty())
         {
-            m.setMapaAtualParaPadrao();
-//            m.imprimeMapa();
+            m.reiniciaMapa();
 
             for (int i = 0; i < arrayMoto.size(); i ++)
             {
-                arrayMoto.get(i).move(arrayMoto.get(i).velocidade);
+                arrayMoto.get(i).move();
             }
             for (int i = 0; i < arrayCarro.size(); i ++)
             {
-                arrayCarro.get(i).move(arrayCarro.get(i).velocidade);
+                arrayCarro.get(i).move();
             }
             for (int i = 0; i < arrayCaminhao.size(); i ++)
             {
-                arrayCaminhao.get(i).move(arrayCaminhao.get(i).velocidade);
+                arrayCaminhao.get(i).move();
             }
 
             m.insereNoMapa(arrayMoto, arrayCarro, arrayCaminhao);
+            System.out.print("\033[40;7;31m  \033[0m Moto:" + arrayMoto.size() + "    ");
+            System.out.print("\033[40;7;32m  \033[0m Carro:" + arrayCarro.size() + "    ");
+            System.out.print("\033[40;7;34m  \033[0m Caminhao:" + arrayCaminhao.size() + "    ");
+            System.out.println("");
 
             m.imprimeMapa();
 
+
             try {
-                Thread.sleep(1000);
+                Thread.sleep(333);
             } catch (Exception e) {
                 e.printStackTrace();
             }
+
+            try
+            {
+                final String os = System.getProperty("os.name");
+
+                if (os.contains("Windows"))
+                {
+                    Runtime.getRuntime().exec("cls");
+                }
+                else
+                {
+                    Runtime.getRuntime().exec("clear");
+                }
+            }
+            catch (final Exception e)
+            {
+                //  Handle any exceptions.
+            }
         }
+
+        System.out.println("Não tem mais nenhum veiculo");
+
     }
 }

@@ -10,6 +10,7 @@ public class Veiculo {
         setVelocidade(velocidade);
         setX(geraNum.nextInt(37));
         setY(geraNum.nextInt(37));
+        setFabrica(true);
     }
 
     public void setCor(int cor) {
@@ -20,6 +21,11 @@ public class Veiculo {
         this.velocidade = velocidade;
     }
 
+
+    public void setFabrica(boolean fabrica) {
+        this.fabrica = fabrica;
+    }
+
     public void setX(int x) {
         this.x = x;
     }
@@ -28,28 +34,28 @@ public class Veiculo {
         this.y = y;
     }
 
-    public void move(int qtd)
+    public void move()
     {
         int movimento = geraNum.nextInt(4);
 
         if (movimento == 0)
         {
-            y -= qtd;
+            y -= getVelocidade();
             // move pra cima
         }
         else if (movimento == 1)
         {
-            y += qtd;
+            y += getVelocidade();
             // move pra baixo
         }
         else if (movimento == 2)
         {
-            x += qtd;
+            x += getVelocidade();
             // move pra direita
         }
         else if (movimento == 3)
         {
-            x -= qtd;
+            x -= getVelocidade();
             // move pra esquerda
         }
 
@@ -67,8 +73,9 @@ public class Veiculo {
         }
         else if (y > 36)
         {
-            x -= 37;
+            y -= 37;
         }
+
     }
 
 
@@ -92,5 +99,5 @@ public class Veiculo {
     protected int y;
     protected int velocidade;
     protected int cor;
-    protected boolean fabrica = false;
+    protected boolean fabrica;
 }
