@@ -17,8 +17,7 @@ public class Main
             arrayCaminhao.add(new Caminhao());
         }
 
-
-        while (!arrayCaminhao.isEmpty() || !arrayMoto.isEmpty() || !arrayCarro.isEmpty())
+        while (!arrayCaminhao.isEmpty() || !arrayMoto.isEmpty() || !arrayCarro.isEmpty()) /// Cria um laco de repeticao que irá rodar o programa
         {
             m.reiniciaMapa();
 
