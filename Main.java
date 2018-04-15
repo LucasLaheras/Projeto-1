@@ -1,22 +1,9 @@
 import java.util.ArrayList;
-import java.util.Scanner;
-import java.util.Random;
-
-
 
 public class Main
 {
     public static void main(String[] args)
     {
-        Scanner input = new Scanner( System.in );
-//        System.out.print("\033[40;7;31m \033[0m"); // Pinta de vermelho
-//        System.out.print("\033[40;7;34m \033[0m"); // Pinta de azul
-//        System.out.print("\033[40;7;32m \033[0m"); // Pinta de verde
-//        System.out.print("\033[40;7;30m \033[0m"); // Pinta de branco
-//        System.out.print("\033[40;7;36m \033[0m"); // Pinta de verde água
-//        System.out.print(" "); // Pinta de preto
-//        System.out.print("\033[40;7;35m \033[0m"); // Pinta de magenta
-
         ArrayList <Moto> arrayMoto = new ArrayList<>();
         ArrayList <Carro> arrayCarro = new ArrayList<>();
         ArrayList <Caminhao> arrayCaminhao = new ArrayList<>();
@@ -48,9 +35,10 @@ public class Main
             }
 
             m.insereNoMapa(arrayMoto, arrayCarro, arrayCaminhao);
-            System.out.print("\033[40;7;31m  \033[0m Moto:" + arrayMoto.size() + "    ");
-            System.out.print("\033[40;7;32m  \033[0m Carro:" + arrayCarro.size() + "    ");
-            System.out.print("\033[40;7;34m  \033[0m Caminhao:" + arrayCaminhao.size() + "    ");
+
+            System.out.printf("\033[7;31m  \033[0m Moto: %2d", arrayMoto.size());
+            System.out.printf("    \033[7;32m  \033[0m Carro: %2d", arrayCarro.size());
+            System.out.printf("    \033[7;34m  \033[0m Caminhao: %2d", arrayCaminhao.size());
             System.out.println("");
 
             m.imprimeMapa();
@@ -62,23 +50,7 @@ public class Main
                 e.printStackTrace();
             }
 
-            try
-            {
-                final String os = System.getProperty("os.name");
-
-                if (os.contains("Windows"))
-                {
-                    Runtime.getRuntime().exec("cls");
-                }
-                else
-                {
-                    Runtime.getRuntime().exec("clear");
-                }
-            }
-            catch (final Exception e)
-            {
-                //  Handle any exceptions.
-            }
+            System.out.print("\033[38A");
         }
 
         System.out.println("Não tem mais nenhum veiculo");

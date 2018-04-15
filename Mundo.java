@@ -7,22 +7,21 @@ public class Mundo {
         reiniciaMapa();
     }
 
-
     public void imprimeMapa() {
         for (int i = 0; i < 37; i++) {
             for (int j = 0; j < 37; j++) {
                 if (mapaAtual[i][j] == 0) {
                     System.out.print("  "); // Pinta de preto
                 } else if (mapaAtual[i][j] == 1) {
-                    System.out.print("\033[40;7;30m  \033[0m"); // Pinta de branco
+                    System.out.print("\033[7;37m  \033[0m"); // Pinta de cinza claro
                 } else if (mapaAtual[i][j] == 2) {
-                    System.out.print("\033[40;7;35m  \033[0m"); // Pinta de magenta
+                    System.out.print("\033[7;35m  \033[0m"); // Pinta de magenta
                 } else if (mapaAtual[i][j] == 3) {
-                    System.out.print("\033[40;7;31m  \033[0m"); // Pinta de vermelho
+                    System.out.print("\033[7;31m  \033[0m"); // Pinta de vermelho
                 } else if (mapaAtual[i][j] == 4) {
-                    System.out.print("\033[40;7;32m  \033[0m"); // Pinta de verde
+                    System.out.print("\033[7;32m  \033[0m"); // Pinta de verde
                 } else if (mapaAtual[i][j] == 5) {
-                    System.out.print("\033[40;7;34m  \033[0m"); // Pinta de azul
+                    System.out.print("\033[7;34m  \033[0m"); // Pinta de azul
                 }
             }
             System.out.println();
