@@ -9,6 +9,7 @@ public class Main
         ArrayList <Caminhao> arrayCaminhao = new ArrayList<>();
         Mundo m = new Mundo();
 
+        /// Coloca 10 carros, motos e caminhoes em cada vetor
         for (int i = 0; i < 10; i++)
         {
             arrayMoto.add(new Moto());
