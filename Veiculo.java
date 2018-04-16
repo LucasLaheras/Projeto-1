@@ -2,9 +2,9 @@ import java.util.Random;
 
 public class Veiculo {
 
-    public Random geraNum = new Random();
+    public Random geraNum = new Random(); /// Função que gera um número
 
-    public Veiculo(int cor, int velocidade)
+    public Veiculo(int cor, int velocidade) /// Construtor de veículo
     {
         setCor(cor);
         setVelocidade(velocidade);
@@ -13,52 +13,49 @@ public class Veiculo {
         setFabrica(true);
     }
 
-    public void setCor(int cor) {
+
+    public void setCor(int cor) { /// Método set para cor
         this.cor = cor;
     }
 
-    public void setVelocidade(int velocidade) {
+    public void setVelocidade(int velocidade) { /// Método set para velocidade
         this.velocidade = velocidade;
     }
 
-
-    public void setFabrica(boolean fabrica) {
+    public void setFabrica(boolean fabrica) { /// Método set para fábrica
         this.fabrica = fabrica;
     }
 
-    public void setX(int x) {
+    public void setX(int x) { /// Método set para X
         this.x = x;
     }
 
-    public void setY(int y) {
+    public void setY(int y) { /// Método set para Y
         this.y = y;
     }
 
-    public void move()
+    public void move() /// Método qu irá mover o objeto
     {
-        int movimento = geraNum.nextInt(4);
+        int movimento = geraNum.nextInt(4); /// Gera um número de 0 a 3
 
         if (movimento == 0)
         {
-            y -= getVelocidade();
-            // move pra cima
+            y -= getVelocidade(); /// move pra cima
         }
         else if (movimento == 1)
         {
-            y += getVelocidade();
-            // move pra baixo
+            y += getVelocidade(); /// move pra baixo
         }
         else if (movimento == 2)
         {
-            x += getVelocidade();
-            // move pra direita
+            x += getVelocidade(); /// move pra direita
         }
         else if (movimento == 3)
         {
-            x -= getVelocidade();
-            // move pra esquerda
+            x -= getVelocidade(); /// move pra esquerda
         }
 
+        /// Se o x ou y passar dos limites do mapa o veiculo aparece do outro lado
         if (x < 0)
         {
             x += 37;
@@ -79,19 +76,19 @@ public class Veiculo {
     }
 
 
-    public int getVelocidade() {
+    public int getVelocidade() { /// Método que retorna o valor da velocidade
         return velocidade;
     }
 
-    public int getX() {
+    public int getX() { /// Método que retorna o valor do X
         return x;
     }
 
-    public int getY() {
+    public int getY() { /// Método que retorna o valor do Y
         return y;
     }
 
-    public int getCor() {
+    public int getCor() { /// Método que retorna o valor da cor
         return cor;
     }
 

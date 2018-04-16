@@ -2,26 +2,26 @@ import java.util.ArrayList;
 
 public class Mundo {
 
-    public Mundo()
+    public Mundo() /// Construtor do mundo
     {
         reiniciaMapa();
     }
 
-    public void imprimeMapa() {
+    public void imprimeMapa() { /// Método que imprime o mapa
         for (int i = 0; i < 37; i++) {
             for (int j = 0; j < 37; j++) {
                 if (mapaAtual[i][j] == 0) {
-                    System.out.print("  "); // Pinta de preto
+                    System.out.print("\033[0m  "); /// Pinta de preto
                 } else if (mapaAtual[i][j] == 1) {
-                    System.out.print("\033[7;37m  \033[0m"); // Pinta de cinza claro
+                    System.out.print("\033[7;37m  \033[0m"); /// Pinta de cinza claro
                 } else if (mapaAtual[i][j] == 2) {
-                    System.out.print("\033[7;35m  \033[0m"); // Pinta de magenta
+                    System.out.print("\033[7;35m  \033[0m"); /// Pinta de magenta
                 } else if (mapaAtual[i][j] == 3) {
-                    System.out.print("\033[7;31m  \033[0m"); // Pinta de vermelho
+                    System.out.print("\033[7;31m  \033[0m"); /// Pinta de vermelho
                 } else if (mapaAtual[i][j] == 4) {
-                    System.out.print("\033[7;32m  \033[0m"); // Pinta de verde
+                    System.out.print("\033[7;32m  \033[0m"); /// Pinta de verde
                 } else if (mapaAtual[i][j] == 5) {
-                    System.out.print("\033[7;34m  \033[0m"); // Pinta de azul
+                    System.out.print("\033[7;34m  \033[0m"); /// Pinta de azul
                 }
             }
             System.out.println();
@@ -184,7 +184,7 @@ public class Mundo {
         }
     }
 
-    public void reiniciaMapa() {
+    public void reiniciaMapa() { ///< Iguala o mapaAtual à matriz padrão de 37 x 37, sendo 0 = nada, limite = 1, fabrica = 2, moto = 3, carro = 4, caminhão = 5
         mapaAtual = new int[][]
                 {
                         {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
@@ -227,7 +227,7 @@ public class Mundo {
                 };
     }
 
-    private int mapaPadrao[][] = //Mapa(37 x 37) = 0, limite = 1, fabrica = 2, moto = 3, carro = 4, caminhão = 5
+    private int mapaPadrao[][] = /// Mapa(37 x 37) = 0, limite = 1, fabrica = 2, moto = 3, carro = 4, caminhão = 5
             {
                     {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
                     {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},

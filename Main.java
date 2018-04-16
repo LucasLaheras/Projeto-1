@@ -4,12 +4,12 @@ public class Main
 {
     public static void main(String[] args)
     {
-        ArrayList <Moto> arrayMoto = new ArrayList<>();
-        ArrayList <Carro> arrayCarro = new ArrayList<>();
-        ArrayList <Caminhao> arrayCaminhao = new ArrayList<>();
-        Mundo m = new Mundo();
+        ArrayList <Moto> arrayMoto = new ArrayList<>(); /// Instancia o vetor arrayMoto
+        ArrayList <Carro> arrayCarro = new ArrayList<>(); /// Instancia o vetor arrayCarro
+        ArrayList <Caminhao> arrayCaminhao = new ArrayList<>(); /// Instancia o vetor arrayCaminhao
+        Mundo m = new Mundo(); /// Instancia o m (mapa)
 
-        /// Coloca 10 carros, motos e caminhoes em cada vetor
+        /// Adiciona ao vetor 10 carros, motos e caminhões
         for (int i = 0; i < 10; i++)
         {
             arrayMoto.add(new Moto());
@@ -17,40 +17,41 @@ public class Main
             arrayCaminhao.add(new Caminhao());
         }
 
-        while (!arrayCaminhao.isEmpty() || !arrayMoto.isEmpty() || !arrayCarro.isEmpty()) /// Cria um laco de repeticao que irá rodar o programa
+        while (!arrayCaminhao.isEmpty() || !arrayMoto.isEmpty() || !arrayCarro.isEmpty()) /// Laco de repetição que irá rodar até não sobrar nenhum veiculo
         {
-            m.reiniciaMapa();
+            m.reiniciaMapa(); /// A matriz mapaAtual recebe os valores padrões do mapa sem os veiculos
 
-            for (int i = 0; i < arrayMoto.size(); i ++)
+            for (int i = 0; i < arrayMoto.size(); i ++) /// Move todos as motos
             {
                 arrayMoto.get(i).move();
             }
-            for (int i = 0; i < arrayCarro.size(); i ++)
+            for (int i = 0; i < arrayCarro.size(); i ++) /// Move todos os carros
             {
                 arrayCarro.get(i).move();
             }
-            for (int i = 0; i < arrayCaminhao.size(); i ++)
+            for (int i = 0; i < arrayCaminhao.size(); i ++) /// Move todos os caminhões
             {
                 arrayCaminhao.get(i).move();
             }
 
-            m.insereNoMapa(arrayMoto, arrayCarro, arrayCaminhao);
+            m.insereNoMapa(arrayMoto, arrayCarro, arrayCaminhao); /// Insere no mapa todos as motos, carros e caminhões
 
+            /// Imprime a legenda com a quantidade de veículos
             System.out.printf("\033[7;31m  \033[0m Moto: %2d", arrayMoto.size());
             System.out.printf("    \033[7;32m  \033[0m Carro: %2d", arrayCarro.size());
             System.out.printf("    \033[7;34m  \033[0m Caminhao: %2d", arrayCaminhao.size());
             System.out.println("");
 
-            m.imprimeMapa();
+            m.imprimeMapa(); /// Imprime o mapa colorido
 
 
             try {
-                Thread.sleep(333);
+                Thread.sleep(333); ///< Pausa o programa durante 333 milisegundos
             } catch (Exception e) {
                 e.printStackTrace();
             }
 
-            System.out.print("\033[38A");
+            System.out.print("\033[38A"); ///< Move o cursor trita e oito linhas acima
         }
 
         System.out.println("Não tem mais nenhum veiculo");
