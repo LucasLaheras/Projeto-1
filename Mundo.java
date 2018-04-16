@@ -10,7 +10,7 @@ public class Mundo {
     public void imprimeMapa() { /// Método que imprime o mapa
         for (int i = 0; i < 37; i++) {
             for (int j = 0; j < 37; j++) {
-                if (mapaAtual[i][j] == 0) {
+                if (mapaAtual[i][j] == 0) { /// teste
                     System.out.print("\033[0m  "); /// Pinta de preto
                 } else if (mapaAtual[i][j] == 1) {
                     System.out.print("\033[7;37m  \033[0m"); /// Pinta de cinza claro
