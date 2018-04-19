@@ -2,9 +2,9 @@ import java.util.Random;
 
 public class Veiculo {
 
-    public Random geraNum = new Random(); /// Função que gera um número
+    public Random geraNum = new Random(); ///< Método que gera um número aleatório
 
-    public Veiculo(int cor, int velocidade) /// Construtor de veículo
+    public Veiculo(int cor, int velocidade) ///< Construtor de veículo
     {
         setCor(cor);
         setVelocidade(velocidade);
@@ -13,7 +13,7 @@ public class Veiculo {
         setFabrica(true);
     }
 
-
+    /// Métodos set
     public void setCor(int cor) { /// Método set para cor
         this.cor = cor;
     }
@@ -34,25 +34,32 @@ public class Veiculo {
         this.y = y;
     }
 
-    public void move() /// Método qu irá mover o objeto
+    public void move() ///< Método que irá mover o objeto
     {
-        int movimento = geraNum.nextInt(4); /// Gera um número de 0 a 3
+        int movimento = geraNum.nextInt(4); ///< Gera um número de 0 a 3
 
+        /// move pra cima
         if (movimento == 0)
         {
-            y -= getVelocidade(); /// move pra cima
+            y -= getVelocidade();
         }
+
+        /// move pra baixo
         else if (movimento == 1)
         {
-            y += getVelocidade(); /// move pra baixo
+            y += getVelocidade();
         }
+
+        /// move pra direita
         else if (movimento == 2)
         {
-            x += getVelocidade(); /// move pra direita
+            x += getVelocidade();
         }
+
+        /// move pra esquerda
         else if (movimento == 3)
         {
-            x -= getVelocidade(); /// move pra esquerda
+            x -= getVelocidade();
         }
 
         /// Se o x ou y passar dos limites do mapa o veiculo aparece do outro lado
@@ -75,7 +82,7 @@ public class Veiculo {
 
     }
 
-
+    /// Métodos get
     public int getVelocidade() { /// Método que retorna o valor da velocidade
         return velocidade;
     }
