@@ -49,12 +49,14 @@ public class Main
                 arrayCaminhao.get(i).move();
             }
 
-            m.insereNoMapa(arrayMoto, arrayCarro, arrayCaminhao); ///< Insere no mapa todos as motos, carros e caminhões
+            m.verificaColisaoEInsereNoMapa(arrayMoto, arrayCarro, arrayCaminhao); ///< Insere no mapa todos as motos, carros e caminhões
 
             /// Imprime a legenda com a quantidade de veículos
-            System.out.printf("\033[7;31m  \033[0m Moto: %2d", arrayMoto.size());
-            System.out.printf("    \033[7;32m  \033[0m Carro: %2d", arrayCarro.size());
-            System.out.printf("    \033[7;34m  \033[0m Caminhao: %2d", arrayCaminhao.size());
+            System.out.println( "--------------------------------------------------------------------------");
+            System.out.printf("|                          \033[7;31m  \033[0m Moto: %2d                                   |\n", arrayMoto.size());
+            System.out.printf("|                          \033[7;32m  \033[0m Carro: %2d                                  |\n", arrayCarro.size());
+            System.out.printf("|                          \033[7;34m  \033[0m Caminhao: %2d                               |\n", arrayCaminhao.size());
+            System.out.println("--------------------------------------------------------------------------");
             System.out.println("");
 
             m.imprimeMapa(); ///< Imprime o mapa colorido
@@ -66,7 +68,7 @@ public class Main
                 e.printStackTrace();
             }
 
-            System.out.print("\033[38A"); ///< Move o cursor trita e oito linhas acima
+            System.out.print("\033[43A"); ///< Move o cursor trita e oito linhas acima
         }
 
         System.out.println("Não tem mais nenhum veiculo");

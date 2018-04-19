@@ -28,8 +28,8 @@ public class Mundo {
         }
     }
 
-    /// Insere todos os veiculos na matriz
-    public void insereNoMapa(ArrayList<Moto> arrayMoto, ArrayList<Carro> arrayCarro, ArrayList<Caminhao> arrayCaminhao)
+    /// Verifica colisão e insere todos os veiculos na matriz
+    public void verificaColisaoEInsereNoMapa(ArrayList<Moto> arrayMoto, ArrayList<Carro> arrayCarro, ArrayList<Caminhao> arrayCaminhao)
     {
         int x, y;
 
