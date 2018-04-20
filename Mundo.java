@@ -55,8 +55,9 @@ public class Mundo {
         /// Laço que percorre todo vetor da moto
         for (int i = 0; i < arrayMoto.size(); i++)
         {
-            /// O x recebe o valor da posição do veículo
+            /// O x recebe o valor da posição horizontal do veículo
             x = arrayMoto.get(i).getX();
+            /// O y recebe o valor da vertical posição do veículo
             y = arrayMoto.get(i).getY();
 
             /// Se no local da moto estiver vazio ou for uma borda, coloca a moto na matriz
@@ -101,8 +102,9 @@ public class Mundo {
         ///< Laço que percorre todo vetor do carro
         for (int i = 0; i < arrayCarro.size(); i++)
         {
-            /// O x recebe o valor da posição do veículo
+            /// O x recebe o valor da posição horizontal do veículo
             x = arrayCarro.get(i).getX();
+            /// O y recebe o valor da vertical posição do veículo
             y = arrayCarro.get(i).getY();
 
             /// Se no local do carro estiver vazio ou for uma borda, coloca ele na matriz
@@ -162,8 +164,9 @@ public class Mundo {
         /// Laço que percorre todo vetor do cominhao
         for (int i = 0; i < arrayCaminhao.size(); i++)
         {
-            /// O x recebe o valor da posição do veiículo
+            /// O x recebe o valor da posição horizontal do veículo
             x = arrayCaminhao.get(i).getX();
+            /// O y recebe o valor da vertical posição do veículo
             y = arrayCaminhao.get(i).getY();
 
             /// Se no local do caminhão estiver vazio ou for uma borda, coloca ele na matriz
