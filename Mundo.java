@@ -2,26 +2,39 @@ import java.util.ArrayList;
 
 public class Mundo {
 
-    public Mundo() ///< Construtor do mundo que inicia o mapa como padrão
+    /// Construtor do mundo que inicia o mapa como padrão
+    public Mundo()
     {
         reiniciaMapa();
     }
 
-    public void imprimeMapa() { ///< Método que imprime o mapa colorido
+    /// Método que imprime o mapa colorido
+    public void imprimeMapa() {
         for (int i = 0; i < 37; i++) {
             for (int j = 0; j < 37; j++) {
+                /// Pinta de preto
                 if (mapaAtual[i][j] == 0) {
-                    System.out.print("\033[0m  "); ///< Pinta de preto
-                } else if (mapaAtual[i][j] == 1) {
-                    System.out.print("\033[7;37m  \033[0m"); ///< Pinta de cinza claro
-                } else if (mapaAtual[i][j] == 2) {
-                    System.out.print("\033[7;35m  \033[0m"); ///< Pinta de magenta
-                } else if (mapaAtual[i][j] == 3) {
-                    System.out.print("\033[7;31m  \033[0m"); ///< Pinta de vermelho
-                } else if (mapaAtual[i][j] == 4) {
-                    System.out.print("\033[7;32m  \033[0m"); ///< Pinta de verde
-                } else if (mapaAtual[i][j] == 5) {
-                    System.out.print("\033[7;34m  \033[0m"); ///< Pinta de azul
+                    System.out.print("\033[0m  ");
+                }
+                /// Pinta de cinza claro
+                else if (mapaAtual[i][j] == 1) {
+                    System.out.print("\033[7;37m  \033[0m");
+                }
+                /// Pinta de magenta
+                else if (mapaAtual[i][j] == 2) {
+                    System.out.print("\033[7;35m  \033[0m");
+                }
+                /// Pinta de vermelho
+                else if (mapaAtual[i][j] == 3) {
+                    System.out.print("\033[7;31m  \033[0m");
+                }
+                /// Pinta de verde
+                else if (mapaAtual[i][j] == 4) {
+                    System.out.print("\033[7;32m  \033[0m");
+                }
+                /// Pinta de azul
+                else if (mapaAtual[i][j] == 5) {
+                    System.out.print("\033[7;34m  \033[0m");
                 }
             }
             System.out.println();
@@ -33,8 +46,10 @@ public class Mundo {
     {
         int x, y;
 
-        for (int i = 0; i < arrayMoto.size(); i++) ///< Laço que percorre todo vetor da moto
+        /// Laço que percorre todo vetor da moto
+        for (int i = 0; i < arrayMoto.size(); i++)
         {
+            /// O x recebe o valor da posição do veículo
             x = arrayMoto.get(i).getX();
             y = arrayMoto.get(i).getY();
 
@@ -45,7 +60,7 @@ public class Mundo {
                 mapaAtual[x][y] = arrayMoto.get(i).cor;
             }
 
-            /// Se no local da moto é uma fabrica, coloca na matriz e verifica se já estava na fabrica e se ela não estivesse duplica
+            /// Se no local da moto é uma fábrica, coloca na matriz e verifica se já estava na fábrica e se ela não estivesse duplica
             else if (mapaAtual[x][y] == 2)
             {
                 if (!arrayMoto.get(i).fabrica)
@@ -55,7 +70,7 @@ public class Mundo {
                 }
                 mapaAtual[x][y] = arrayMoto.get(i).cor;
             }
-            /// Se no local da moto tem outra moto, encontra a moto que está nessa posição e destroi as duas
+            /// Se no local da moto tem outra moto, encontra a moto que está nessa posição e destrói as duas
             else if (mapaAtual[x][y] == 3)
             {
                 for (int j = 0; j < i; j++)
@@ -74,8 +89,10 @@ public class Mundo {
             }
         }
 
-        for (int i = 0; i < arrayCarro.size(); i++) ///< Laço que percorre todo vetor do carro
+        ///< Laço que percorre todo vetor do carro
+        for (int i = 0; i < arrayCarro.size(); i++)
         {
+            /// O x recebe o valor da posição do veículo
             x = arrayCarro.get(i).getX();
             y = arrayCarro.get(i).getY();
 
@@ -85,7 +102,7 @@ public class Mundo {
                 arrayCarro.get(i).fabrica = false;
                 mapaAtual[x][y] = arrayCarro.get(i).cor;
             }
-            /// Se no local do carro é uma fabrica, coloca na matriz e verifica se já estava na fabrica e se ele não estivesse duplica
+            /// Se no local do carro é uma fábrica, coloca na matriz e verifica se já estava na fábrica e se ele não estivesse duplica
             else if (mapaAtual[x][y] == 2)
             {
                 if (!arrayCarro.get(i).fabrica)
@@ -95,7 +112,7 @@ public class Mundo {
                 }
                 mapaAtual[x][y] = arrayCarro.get(i).cor;
             }
-            /// Se no local do carro tem uma moto, encontra a moto que está nessa posição e destroi
+            /// Se no local do carro tem uma moto, encontra a moto que está nessa posição e destrói
             else if (mapaAtual[x][y] == 3)
             {
                 arrayCarro.get(i).fabrica = false;
@@ -110,7 +127,7 @@ public class Mundo {
                 }
                 mapaAtual[x][y] = arrayCarro.get(i).cor;
             }
-            /// Se no local do carro tem outro carro, encontra o carro que está nessa posição e destroi os dois
+            /// Se no local do carro tem outro carro, encontra o carro que está nessa posição e destrói os dois
             else if (mapaAtual[x][y] == 4)
             {
                 for (int j = 0; j < i; j++)
@@ -129,8 +146,10 @@ public class Mundo {
             }
         }
 
-        for (int i = 0; i < arrayCaminhao.size(); i++) ///< Laço que percorre todo vetor do cominhao
+        /// Laço que percorre todo vetor do cominhao
+        for (int i = 0; i < arrayCaminhao.size(); i++)
         {
+            /// O x recebe o valor da posição do veiículo
             x = arrayCaminhao.get(i).getX();
             y = arrayCaminhao.get(i).getY();
 
@@ -140,7 +159,7 @@ public class Mundo {
                 arrayCaminhao.get(i).fabrica = false;
                 mapaAtual[x][y] = arrayCaminhao.get(i).cor;
             }
-            /// Se no local do caminhão é uma fabrica, coloca na matriz e verifica se já estava na fabrica e se ele não estivesse duplica
+            /// Se no local do caminhão é uma fábrica, coloca na matriz e verifica se já estava na fábrica e se ele não estivesse duplica
             else if (mapaAtual[x][y] == 2)
             {
                 if (!arrayCaminhao.get(i).fabrica)
@@ -150,7 +169,7 @@ public class Mundo {
                 }
                 mapaAtual[x][y] = arrayCaminhao.get(i).cor;
             }
-            /// Se no local do caminhão tem uma moto, encontra a moto que está nessa posição e destroi
+            /// Se no local do caminhão tem uma moto, encontra a moto que está nessa posição e destrói
             else if (mapaAtual[x][y] == 3)
             {
                 arrayCaminhao.get(i).fabrica = false;
@@ -165,7 +184,7 @@ public class Mundo {
                 }
                 mapaAtual[x][y] = arrayCaminhao.get(i).cor;
             }
-            /// Se no local do caminhão tem um carro, encontra o carro que está nessa posição e destroi
+            /// Se no local do caminhão tem um carro, encontra o carro que está nessa posição e destrói
             else if (mapaAtual[x][y] == 4)
             {
                 arrayCaminhao.get(i).fabrica = false;
@@ -180,7 +199,7 @@ public class Mundo {
                 }
                 mapaAtual[x][y] = arrayCaminhao.get(i).cor;
             }
-            /// Se no local do carro tem outro caminhão, encontra o caminhão que está nessa posição e destroi os dois
+            /// Se no local do carro tem outro caminhão, encontra o caminhão que está nessa posição e destrói os dois
             else if (mapaAtual[x][y] == 5)
             {
                 arrayCaminhao.get(i).fabrica = false;
@@ -202,7 +221,8 @@ public class Mundo {
         }
     }
 
-    public void reiniciaMapa() { ///< Iguala o mapaAtual à matriz padrão de 37 x 37, sendo 0 = nada, limite = 1, fabrica = 2, moto = 3, carro = 4, caminhão = 5
+    /// Iguala o mapaAtual à matriz padrão de 37 x 37, sendo 0 = nada, limite = 1, fabrica = 2, moto = 3, carro = 4, caminhão = 5
+    public void reiniciaMapa() {
         mapaAtual = new int[][]
                 {
                         {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
@@ -245,7 +265,8 @@ public class Mundo {
                 };
     }
 
-    private int mapaPadrao[][] = /// Mapa(37 x 37) = 0, limite = 1, fabrica = 2, moto = 3, carro = 4, caminhão = 5
+    /// Mapa sem carros que vai se usado para saber que cor era antes de colocar os carros quando houver colisão
+    private int mapaPadrao[][] =
             {
                     {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
                     {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
@@ -286,6 +307,7 @@ public class Mundo {
                     {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
             };
 
+    /// Instancia o mapa que vai ser utilizado
     private int mapaAtual[][];
 }
 

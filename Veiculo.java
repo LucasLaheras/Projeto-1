@@ -1,10 +1,11 @@
 import java.util.Random;
 
 public class Veiculo {
+    /// Método que gera um número aleatório
+    public Random geraNum = new Random();
 
-    public Random geraNum = new Random(); ///< Método que gera um número aleatório
-
-    public Veiculo(int cor, int velocidade) ///< Construtor de veículo
+    /// Construtor de veículo
+    public Veiculo(int cor, int velocidade)
     {
         setCor(cor);
         setVelocidade(velocidade);
@@ -34,9 +35,10 @@ public class Veiculo {
         this.y = y;
     }
 
-    public void move() ///< Método que irá mover o objeto
+    /// Método que irá mover o objeto
+    public void move()
     {
-        int movimento = geraNum.nextInt(4); ///< Gera um número de 0 a 3
+        int movimento = geraNum.nextInt(4); /// Gera um número de 0 a 3
 
         /// move pra cima
         if (movimento == 0)
@@ -82,26 +84,29 @@ public class Veiculo {
 
     }
 
-    /// Métodos get
-    public int getVelocidade() { /// Método que retorna o valor da velocidade
+    /// Método que retorna o valor da velocidade
+    public int getVelocidade() {
         return velocidade;
     }
 
-    public int getX() { /// Método que retorna o valor do X
+    /// Método que retorna o valor do X
+    public int getX() {
         return x;
     }
 
-    public int getY() { /// Método que retorna o valor do Y
+    /// Método que retorna o valor do Y
+    public int getY() {
         return y;
     }
 
-    public int getCor() { /// Método que retorna o valor da cor
+    /// Método que retorna o valor da cor
+    public int getCor() {
         return cor;
     }
 
-    protected int x;
-    protected int y;
-    protected int velocidade;
-    protected int cor;
-    protected boolean fabrica;
+    protected int x; /// Guarda a posição horizontal do veiculo
+    protected int y; /// Guarda a posição vertical do veiculo
+    protected int velocidade; /// Guarda a velocidadedo veiculo
+    protected int cor; /// Guarda a cor horizontal do veiculo
+    protected boolean fabrica;/// Guarda se o veiculo já estava na fabrica
 }
