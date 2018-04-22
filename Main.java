@@ -63,8 +63,8 @@ public class Main
             System.out.printf("|                          \033[7;32m  \033[0m Carro: %2d                                  |\n", arrayCarro.size());
             System.out.printf("|                          \033[7;34m  \033[0m Caminhao: %2d                               |\n", arrayCaminhao.size());
             System.out.printf("|                                                                        |\n", arrayCaminhao.size());
-            System.out.printf("|       Adicionados       Moto: %2d   Carro: %2d    Caminhao: %2d           |\n", m.getAdcionaMoto(), m.getAdcionaCarro(), m.getAdcionaCaminhao());
-            System.out.printf("|       Destruidos        Moto: %2d   Carro: %2d    Caminhao: %2d           |\n", m.getDeletaMoto(), m.getDeletaCarro(), m.getDeletaCaminhao());
+            System.out.printf("|      Adicionados      Moto: %3d   Carro: %3d    Caminhao: %3d          |\n", m.getAdcionaMoto(), m.getAdcionaCarro(), m.getAdcionaCaminhao());
+            System.out.printf("|      Destruidos       Moto: %3d   Carro: %3d    Caminhao: %3d          |\n", m.getDeletaMoto(), m.getDeletaCarro(), m.getDeletaCaminhao());
             System.out.println("--------------------------------------------------------------------------");
             System.out.println("");
 
@@ -73,7 +73,7 @@ public class Main
 
             /// Pausa o programa durante 333 milisegundos
             try {
-                Thread.sleep(333);
+                Thread.sleep(200);
             } catch (Exception e) {
                 e.printStackTrace();
             }
