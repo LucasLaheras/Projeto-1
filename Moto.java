@@ -3,5 +3,12 @@ public class Moto extends Veiculo {
     public Moto()
     {
         super(3, 3);
+        setCilindradas(super.geraNum.nextInt(1500));
     }
+
+    public void setCilindradas(int cilindradas) {
+        this.cilindradas = cilindradas;
+    }
+
+    public int cilindradas;
 }

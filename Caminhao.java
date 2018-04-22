@@ -3,5 +3,16 @@ public class Caminhao extends Veiculo {
     public Caminhao()
     {
         super(5, 1);
+        setToneladas(super.geraNum.nextInt(14));
     }
+
+    public void setToneladas(int toneladas) {
+        this.toneladas = toneladas;
+    }
+
+    public int getToneladas() {
+        return toneladas;
+    }
+
+    protected int toneladas;
 }
