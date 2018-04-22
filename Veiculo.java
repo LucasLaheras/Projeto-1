@@ -104,9 +104,14 @@ public class Veiculo {
         return cor;
     }
 
-    protected int x; /// Guarda a posição horizontal do veiculo
-    protected int y; /// Guarda a posição vertical do veiculo
-    protected int velocidade; /// Guarda a velocidadedo veiculo
-    protected int cor; /// Guarda a cor horizontal do veiculo
-    protected boolean fabrica;/// Guarda se o veiculo já estava na fabrica
+    /// Guarda a posição horizontal do veiculo
+    protected int x;
+    /// Guarda a posição vertical do veiculo
+    protected int y;
+    /// Guarda a velocidadedo veiculo
+    protected int velocidade;
+    /// Guarda a cor horizontal do veiculo
+    protected int cor;
+    /// Guarda se o veiculo já estava na fabrica
+    protected boolean fabrica;
 }

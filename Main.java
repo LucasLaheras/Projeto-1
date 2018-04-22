@@ -13,18 +13,24 @@ public class Main
 {
     public static void main(String[] args)
     {
+        /// Instancia o vetor arrayMoto
+        ArrayList <Moto> arrayMoto = new ArrayList<>();
+        /// Instancia o vetor arrayCarro
+        ArrayList <Carro> arrayCarro = new ArrayList<>();
+        /// Instancia o vetor arrayCaminhao
+        ArrayList <Caminhao> arrayCaminhao = new ArrayList<>();
+        /// Instancia o m (mapa)
+        Mundo m = new Mundo();
 
-        ArrayList <Moto> arrayMoto = new ArrayList<>(); /// Instancia o vetor arrayMoto
-        ArrayList <Carro> arrayCarro = new ArrayList<>(); /// Instancia o vetor arrayCarro
-        ArrayList <Caminhao> arrayCaminhao = new ArrayList<>(); /// Instancia o vetor arrayCaminhao
-        Mundo m = new Mundo(); /// Instancia o m (mapa)
-
-        /// Adiciona ao vetor 10 carros, motos e caminhões
+        /// Adiciona ao vetor 10 veiculos de cada tipo e adiciona mais um ao contador de cada tipo de veiculo
         for (int i = 0; i < 10; i++)
         {
             arrayMoto.add(new Moto());
+            m.adcionaMoto();
             arrayCarro.add(new Carro());
+            m.adcionaCarro();
             arrayCaminhao.add(new Caminhao());
+            m.adcionaCaminhao();
         }
 
         while (!arrayCaminhao.isEmpty() || !arrayMoto.isEmpty() || !arrayCarro.isEmpty()) /// Laco de repetição que irá rodar até não sobrar nenhum veiculo
@@ -56,10 +62,14 @@ public class Main
             System.out.printf("|                          \033[7;31m  \033[0m Moto: %2d                                   |\n", arrayMoto.size());
             System.out.printf("|                          \033[7;32m  \033[0m Carro: %2d                                  |\n", arrayCarro.size());
             System.out.printf("|                          \033[7;34m  \033[0m Caminhao: %2d                               |\n", arrayCaminhao.size());
+            System.out.printf("|                                                                        |\n", arrayCaminhao.size());
+            System.out.printf("|       Adicionados       Moto: %2d   Carro: %2d    Caminhao: %2d           |\n", m.getAdcionaMoto(), m.getAdcionaCarro(), m.getAdcionaCaminhao());
+            System.out.printf("|       Destruidos        Moto: %2d   Carro: %2d    Caminhao: %2d           |\n", m.getDeletaMoto(), m.getDeletaCarro(), m.getDeletaCaminhao());
             System.out.println("--------------------------------------------------------------------------");
             System.out.println("");
 
-            m.imprimeMapa(); /// Imprime o mapa colorido
+            /// Imprime o mapa colorido
+            m.imprimeMapa();
 
             /// Pausa o programa durante 333 milisegundos
             try {
@@ -68,7 +78,7 @@ public class Main
                 e.printStackTrace();
             }
 
-            System.out.print("\033[43A"); /// Move o cursor trita e oito linhas acima
+            System.out.print("\033[46A"); /// Move o cursor trita e oito linhas acima
         }
 
         System.out.println("Não tem mais nenhum veiculo");
